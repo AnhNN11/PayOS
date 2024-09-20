@@ -1,18 +1,11 @@
 const express = require("express");
 const dotenv = require("dotenv");
-const cors = require("cors");
 const payOS = require("./utils/payos");
 
 const app = express();
 const PORT = process.env.PORT || 3030;
 dotenv.config();
 
-// Cấu hình CORS để cho phép tất cả các nguồn gốc
-app.use(
-  cors({
-    origin: "*",
-  })
-);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
