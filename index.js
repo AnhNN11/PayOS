@@ -7,7 +7,12 @@ const app = express();
 const PORT = process.env.PORT || 3030;
 dotenv.config();
 
-app.use(cors());
+// Cấu hình CORS để cho phép tất cả các nguồn gốc
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
